@@ -133,7 +133,7 @@ class sdGunClass
 		};
 			sdGun.classes[ sdGun.CLASS_THOMAS = 31 ] = 
 		{
-			image: sdWorld.CreateImageFromFile( 'thomas' ),
+			image: sdWorld.CreateImageFromFile( 'thomas.png' ),
 			sound: 'gun_rifle',
 			sound_pitch: 1.2,
 			title: 'Thomas gun',
@@ -150,7 +150,7 @@ class sdGunClass
 			
 		sdGun.classes[ sdGun.CLASS_SNIPERMK2 = 32 ] = 
         {
-            image: sdWorld.CreateImageFromFile( 'snipermk2' ),
+            image: sdWorld.CreateImageFromFile( 'snipermk2.png' ),
             sound: 'gun_rifle',
             sound_pitch: 1.5,
             sound_volume: 1.5,
