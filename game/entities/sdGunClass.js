@@ -50,23 +50,23 @@ class sdGunClass
 		{
 			image: sdWorld.CreateImageFromFile( 'rifle' ),
 			sound: 'gun_rifle',
-			title: 'Assault rifle',
+			title: 'Assault Rifle',
 			slot: 2,
 			reload_time: 3,
 			muzzle_x: 7,
 			ammo_capacity: 30,
 			spread: 0.01, // 0.03
 			count: 1,
-			projectile_properties: { _damage: 25 }
+			projectile_properties: { _damage: 35 }
 		};
 		
 		sdGun.classes[ sdGun.CLASS_SHOTGUN = 2 ] = 
 		{
-			image: sdWorld.CreateImageFromFile( 'shotgun' ),
-			sound: 'gun_shotgun',
+			image: sdWorld.CreateImageFromFile( 'Shotgun-1' ),//Other assets exist for a pump-action animation but I was getting lazy - Com
+			sound: 'gun_shotgun			reload_time: 20,',
 			title: 'Shotgun',
 			slot: 3,
-			reload_time: 20,
+
 			muzzle_x: 9,
 			ammo_capacity: 8,
 			count: 5,
@@ -86,7 +86,7 @@ class sdGunClass
 			ammo_capacity: -1,
 			count: 1,
 			matter_cost: 50,
-			projectile_properties: { _rail: true, _damage: 70, color: '#62c8f2'/*, _knock_scale:0.01 * 8*/ }
+			projectile_properties: { _rail: true, _damage: 70, color: '#62c8f2', _knock_scale:0.01 * 8 }
 		};
 		
 		sdGun.classes[ sdGun.CLASS_ROCKET = 4 ] = 
@@ -129,10 +129,43 @@ class sdGunClass
 			ammo_capacity: 16,
 			count: 1,
 			matter_cost: 60,
-			projectile_velocity: 16,
 			projectile_properties: { explosion_radius: 10, model: 'ball', _damage: 5, color:'#00ffff' }
 		};
-		
+			sdGun.classes[ sdGun.CLASS_THOMAS = 31 ] = 
+		{
+			image: sdWorld.CreateImageFromFile( 'thomas' ),
+			sound: 'gun_rifle',
+			sound_pitch: 1.2,
+			title: 'Thomas gun',
+			slot: 2,
+  		    	reload_time: 2,
+			muzzle_x: 9,
+			ammo_capacity: 40,
+			spread: 0.02, // 0.03
+			count: 1,
+			matter_cost: 750,
+		    	min_build_tool_level: 1,
+			projectile_properties: { _damage: 28 }
+		};
+			
+		sdGun.classes[ sdGun.CLASS_SNIPERMK2 = 32 ] = 
+        {
+            image: sdWorld.CreateImageFromFile( 'snipermk2' ),
+            sound: 'gun_rifle',
+            sound_pitch: 1.5,
+            sound_volume: 1.5,
+            title: 'Sniper_MK2',
+            slot: 4,
+          	 matter_cost: 150,
+		 min_build_tool_level: 1,
+            reload_time: 6,
+            muzzle_x: 8,
+            ammo_capacity: 3,
+            count: 1,
+            projectile_properties: { _damage: 48, color: '#a68200' },
+        };
+
+
 		sdGun.classes[ sdGun.CLASS_BUILD_TOOL = 7 ] = 
 		{
 			image: sdWorld.CreateImageFromFile( 'buildtool' ),
@@ -201,9 +234,9 @@ class sdGunClass
 			muzzle_x: 11,
 			ammo_capacity: -1,
 			count: 1,
-			projectile_velocity: sdGun.default_projectile_velocity * 2,
+			projectile_velocity: 16 * 2,
 			matter_cost: 60,
-			projectile_properties: { _damage: 105, /*_knock_scale:0.01 * 8, */penetrating:true }
+			projectile_properties: { _damage: 105, _knock_scale:0.01 * 8, penetrating:true }
 		};
 		
 		sdGun.classes[ sdGun.CLASS_SWORD = 11 ] = 
@@ -235,7 +268,6 @@ class sdGunClass
 			ammo_capacity: -1,
 			count: 1,
 			matter_cost: 300,
-			projectile_velocity: 16,
 			projectile_properties: { time_left: 2, _damage: 50, color: 'transparent', _return_damage_to_owner:true, _custom_target_reaction:( bullet, target_entity )=>
 				{
 					if ( target_entity.is( sdCharacter ) )
@@ -271,7 +303,7 @@ class sdGunClass
 			muzzle_x: 7,
 			ammo_capacity: -1,// 10, // 3
 			count: 1,
-			projectile_properties: { _rail: true, _damage: 15, color: '#62c8f2'/*, _knock_scale:0.01 * 8*/ }, // 70
+			projectile_properties: { _rail: true, _damage: 15, color: '#62c8f2', _knock_scale:0.01 * 8 }, // 70
 			spawnable: false
 		};
 		
@@ -343,7 +375,7 @@ class sdGunClass
 			muzzle_x: 6,
 			ammo_capacity: -1,
 			count: 1,
-			projectile_properties: { _rail: true, _damage: 25, color: '#62c8f2'/*, _knock_scale:0.01 * 8*/ },
+			projectile_properties: { _rail: true, _damage: 25, color: '#62c8f2', _knock_scale:0.01 * 8 },
 			spawnable: false
 		};
 		
@@ -353,15 +385,15 @@ class sdGunClass
 				image1: [ sdWorld.CreateImageFromFile( 'raygun_c01y1' ), sdWorld.CreateImageFromFile( 'raygun_c01y1b' ) ],
 				image2: [ sdWorld.CreateImageFromFile( 'raygun_c01y2' ), sdWorld.CreateImageFromFile( 'raygun_c01y2b' ) ],
 				sound: 'gun_raygun',
-				title: 'Raygun C01y',
-				slot: 3,
-				reload_time: 60, // Might be inaccurate - not checked
-				muzzle_x: 9,
-				ammo_capacity: -1,
-				count: 3,
-				projectile_velocity: 14 * 2,
-				spread: 0.15,
-				projectile_properties: { _damage: 40, color: '#DDDDDD', penetrating: true }, // I nerfed it's damage from 45 to 40 but that's up to balancing decisions - Booraz149
+               			title: 'Raygun C01y',
+                		slot: 3,
+                		reload_time: 60, // Might be inaccurate - not checked
+                		muzzle_x: 9,
+                		ammo_capacity: -1,
+                		count: 3,
+                		projectile_velocity: 14 * 2,
+                		spread: 0.15,
+                		projectile_properties: { _damage: 40, color: '#DDDDDD', penetrating: true }, // I nerfed it's damage from 45 to 40 but that's up to balancing decisions - Booraz149
 				spawnable:false
 		};
 
@@ -378,7 +410,7 @@ class sdGunClass
 			spread: 0.01,
 			count: 1,
 			projectile_velocity: 10 * 2,  // Slower bullet velocity than sniper but more damage
-			projectile_properties: { _damage: 55/*111*/, color:'#00ffff', model: 'f_psicutter_proj'/*, _knock_scale:0.01 * 8*/, penetrating: false, _bouncy: true },
+			projectile_properties: { _damage: 55/*111*/, color:'#00ffff', model: 'f_psicutter_proj', _knock_scale:0.01 * 8, penetrating: false, _bouncy: true },
 			spawnable:false
 		};
 		
@@ -394,7 +426,7 @@ class sdGunClass
 			ammo_capacity: -1,
 			spread: 0.09,
 			count: 5,
-			projectile_properties: { _rail: true, _damage: 23, color: '#62c8f2'/*, _knock_scale:0.01 * 8*/ },
+			projectile_properties: { _rail: true, _damage: 23, color: '#62c8f2', _knock_scale:0.01 * 8 },
 			spawnable: false
 		};		
 		
@@ -408,7 +440,7 @@ class sdGunClass
 			muzzle_x: 7,
 			ammo_capacity: -1,
 			count: 1,
-			projectile_properties: { _rail: true, _damage: 62, color: '#FF0000'/*, _knock_scale:0.01 * 8*/ },
+			projectile_properties: { _rail: true, _damage: 62, color: '#FF0000', _knock_scale:0.01 * 8 },
 			spawnable: false
 		};
 		
@@ -431,10 +463,6 @@ class sdGunClass
 				{
 					character._upgrade_counters[ 'upgrade_energy' ] = Math.min( 60, character._upgrade_counters[ 'upgrade_energy' ] + 4 );
 					character.matter_max = Math.round( 50 + character._upgrade_counters[ 'upgrade_energy' ] * 45 );
-					if ( Math.random() > 0.5 )
-					character.Say( "I can use this Cube shard to store matter inside it" );
-					else
-					character.Say( "Cube shard! These store matter pretty well");
 					gun.remove(); 
 				}
 
@@ -494,10 +522,6 @@ class sdGunClass
 				{
 					character.build_tool_level++;
 					character._acquired_bt_mech = true;
-					if ( Math.random() > 0.5 )
-					character.Say( "I can use this to expand my building arsenal" );
-					else
-					character.Say( "This is definitely gonna help me build new stuff");
 					gun.remove(); 
 					
 					if ( character._socket )
@@ -507,141 +531,84 @@ class sdGunClass
 				return false; 
 			} 
 		};
-
-		sdGun.classes[ sdGun.CLASS_LVL1_LIGHT_ARMOR = 26 ] = 
+		sdGun.classes[ sdGun.CLASS_DMR_L2 = 26 ] = //Created to keep the spirit of the original shotgun - Com
 		{
-			image: sdWorld.CreateImageFromFile( 'armor_light' ),
-			title: 'SD-01 Light Armor',
-			slot: 0,
-			reload_time: 25,
-			muzzle_x: null,
-			ammo_capacity: -1,
-			count: 0,
-			projectile_properties: { _damage: 0 },
-			ignore_slot: true,
-			matter_cost: 150,
-			min_workbench_level: 1,
-			onPickupAttempt: ( character, gun )=> // Cancels pickup and removes itself if player can pickup as matter
-			{ 
-				// 2 was too bad for case of randomly breaking crystals when digging
-				//if ( character.armor === 0 || character._armor_absorb_perc <= character._armor_absorb_perc )
-				{
-					character.armor = 130;
-					character.armor_max = 130;
-					character._armor_absorb_perc = 0.3; // 30% damage reduction
-					gun.remove(); 
-				}
-
-				return false; 
-			} 
+				image: sdWorld.CreateImageFromFile( 'dmr' ),
+				sound: 'gun_pistol',
+				sound_pitch: 0.8,
+				sound_volume: 2,
+				title: 'DMR L-2',
+				slot: 4,
+				reload_time: 20,
+				muzzle_x: 8,
+				ammo_capacity: 6,
+				count: 1,
+				projectile_velocity: 14 * 2,
+				spread: 0.001,
+				matter_cost: 60,
+				projectile_properties: { _damage: 85, color: '#deFFFF', _knock_scale:0.01 * 6 }
 		};
-
-		sdGun.classes[ sdGun.CLASS_LVL1_MEDIUM_ARMOR = 27 ] = 
+		sdGun.classes[ sdGun.CLASS_LMG_S2 = 27 ] = //Created before P01 as somethign intended to be plantable, hoever, likely will end up used on other entities - Com
 		{
-			image: sdWorld.CreateImageFromFile( 'armor_medium' ),
-			title: 'SD-01 Duty Armor',
-			slot: 0,
-			reload_time: 25,
-			muzzle_x: null,
-			ammo_capacity: -1,
-			count: 0,
-			projectile_properties: { _damage: 0 },
-			ignore_slot: true,
-			matter_cost: 250,
-			min_workbench_level: 1,
-			onPickupAttempt: ( character, gun )=> // Cancels pickup and removes itself if player can pickup as matter
-			{ 
-				// 2 was too bad for case of randomly breaking crystals when digging
-				//if ( character.armor === 0 || character._armor_absorb_perc <= character._armor_absorb_perc )
-				{
-					character.armor = 190;
-					character.armor_max = 190;
-					character._armor_absorb_perc = 0.4; // 40% damage reduction
-					gun.remove(); 
-				}
-
-				return false; 
-			} 
-		};
-
-		sdGun.classes[ sdGun.CLASS_LVL1_HEAVY_ARMOR = 28 ] = 
-		{
-			image: sdWorld.CreateImageFromFile( 'armor_heavy' ),
-			title: 'SD-01 Combat Armor',
-			slot: 0,
-			reload_time: 25,
-			muzzle_x: null,
-			ammo_capacity: -1,
-			count: 0,
-			projectile_properties: { _damage: 0 },
-			ignore_slot: true,
-			matter_cost: 350,
-			min_workbench_level: 1,
-			onPickupAttempt: ( character, gun )=> // Cancels pickup and removes itself if player can pickup as matter
-			{ 
-				// 2 was too bad for case of randomly breaking crystals when digging
-				//if ( character.armor === 0 || character._armor_absorb_perc <= character._armor_absorb_perc )
-				{
-					character.armor = 250;
-					character.armor_max = 250;
-					character._armor_absorb_perc = 0.5; // 50% damage reduction
-					gun.remove(); 
-				}
-
-				return false; 
-			} 
-		};
-
-		sdGun.classes[ sdGun.CLASS_SHOTGUN_MK2 = 29 ] = 
-		{
-			image: sdWorld.CreateImageFromFile( 'shotgun_mk2' ),
-			sound: 'gun_shotgun',
-			title: 'Shotgun MK2',
-			slot: 3,
-			reload_time: 6,
-			muzzle_x: 9,
-			ammo_capacity: 15,
-			count: 3,
-			spread: 0.1,
-			matter_cost: 90,
-			burst: 3, // Burst fire count
-			burst_reload: 30, // Burst fire reload, needed when giving burst fire
-			min_build_tool_level: 2,
-			projectile_properties: { _damage: 20 }
-		sdGun.classes[ sdGun.CLASS_THOMAS = 30 ] = 
-		{
-			image: sdWorld.CreateImageFromFile( 'thomas' ),
-			sound: 'gun_rifle',
-			sound_pitch: 1.2,
-			title: 'Thomas gun',
+			image: sdWorld.CreateImageFromFile( 'LMG-1' ),
+			sound: 'turret',
+			sound_pitch: 0.55,
+			sound_volume: 1,
+			title: 'MMG S2',
 			slot: 2,
-  		    	reload_time: 2,
-			muzzle_x: 9,
-			ammo_capacity: 40,
-			spread: 0.02, // 0.03
+			reload_time: 1.5,
+			muzzle_x: 10,
+			ammo_capacity: 120,
+			spread: 0.2, // 0.03
+			projectile_velocity: 9.5 * 2,
 			count: 1,
-			matter_cost: 750,
-		    	min_workbench_level: 1,
-			projectile_properties: { _damage: 28 }
+			projectile_properties: { _damage: 10 },
+			spawnable: false ,
 		};
-			
-		sdGun.classes[ sdGun.CLASS_SNIPERMK2 = 31 ] = 
+		sdGun.classes[ sdGun.CLASS_C01P = 28] = //Concept art by Lazyrain, implemanted by Commander
+		{
+			image: sdWorld.CreateImageFromFile( 'C01P' ),
+			sound: 'gun_pistol',
+			title: 'Pistol C01P',
+			slot: 1,
+			reload_time: 8,
+			muzzle_x: 5,
+			ammo_capacity: 14,
+			spread: 0.02,
+			count: 1,
+			projectile_properties: { _damage: 30 , color: '#afdfff'},
+			spawnable: false
+		};
+		sdGun.classes[ sdGun.CLASS_RAIL_MEDGUN = 29 ] = 
         {
-            		image: sdWorld.CreateImageFromFile( 'snipermk2' ),
-           		sound: 'gun_rifle',
-           		sound_pitch: 1.5,
-           		sound_volume: 1.5,
-            		title: 'Sniper_MK2',
-            		slot: 4,
-          	 	matter_cost: 150,
-		 	min_build_tool_level: 1,
-            		reload_time: 6,
-            		muzzle_x: 8,
-            		ammo_capacity: 3,
-            		count: 1,
-            		projectile_properties: { _damage: 48, color: '#a68200' },
-        
-
+            image: sdWorld.CreateImageFromFile( 'rail_medgun' ),
+            sound: 'gun_defibrillator',
+            sound_pitch: 1.5,
+            sound_volume: 2,
+            title: 'Cube-medgun',
+            slot: 6,
+            reload_time: 45,
+            muzzle_x: 6,
+            ammo_capacity: -1,
+            count: 1,
+            projectile_properties: { _rail: true, time_left: 10, _damage: -30, color: '#ffffff', _return_damage_to_owner:true },
+            spawnable: false 
+        };
+		sdGun.classes[ sdGun.CLASS_RAIL_SNIPER = 30 ] = 
+        {
+            image: sdWorld.CreateImageFromFile( 'rail_sniper' ),
+            sound: 'cube_attack',
+            sound_pitch: 0.4,
+            sound_volume: 2,
+            title: 'Cube-sniper',
+            slot: 4,
+            reload_time: 5,
+            muzzle_x: 8,
+            ammo_capacity: 3,
+            count: 1,
+            projectile_properties: { _rail: true, _damage: 37, color: '#62c8f2' },
+            spawnable: false
+        };
 
 		// Add new gun classes above this line //
 		
