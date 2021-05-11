@@ -608,7 +608,40 @@ class sdGunClass
 			burst_reload: 30, // Burst fire reload, needed when giving burst fire
 			min_build_tool_level: 2,
 			projectile_properties: { _damage: 20 }
+						sdGun.classes[ sdGun.CLASS_THOMAS = 30 ] = 
+		{
+			image: sdWorld.CreateImageFromFile( 'thomas' ),
+			sound: 'gun_rifle',
+			sound_pitch: 1.2,
+			title: 'Thomas gun',
+			slot: 2,
+  		    	reload_time: 2,
+			muzzle_x: 9,
+			ammo_capacity: 40,
+			spread: 0.02, // 0.03
+			count: 1,
+			matter_cost: 750,
+		    	min_build_tool_level: 1,
+			projectile_properties: { _damage: 28 }
 		};
+			
+				sdGun.classes[ sdGun.CLASS_SNIPERMK2 = 31 ] = 
+        {
+            		image: sdWorld.CreateImageFromFile( 'snipermk2' ),
+           		sound: 'gun_rifle',
+           		sound_pitch: 1.5,
+           		sound_volume: 1.5,
+            		title: 'Sniper_MK2',
+            		slot: 4,
+          	 	matter_cost: 150,
+		 	min_build_tool_level: 1,
+            		reload_time: 6,
+            		muzzle_x: 8,
+            		ammo_capacity: 3,
+            		count: 1,
+            		projectile_properties: { _damage: 48, color: '#a68200' },
+        
+
 
 		// Add new gun classes above this line //
 		
