@@ -608,7 +608,7 @@ class sdGunClass
 			burst_reload: 30, // Burst fire reload, needed when giving burst fire
 			min_build_tool_level: 2,
 			projectile_properties: { _damage: 20 }
-						sdGun.classes[ sdGun.CLASS_THOMAS = 30 ] = 
+		sdGun.classes[ sdGun.CLASS_THOMAS = 30 ] = 
 		{
 			image: sdWorld.CreateImageFromFile( 'thomas' ),
 			sound: 'gun_rifle',
@@ -621,11 +621,11 @@ class sdGunClass
 			spread: 0.02, // 0.03
 			count: 1,
 			matter_cost: 750,
-		    	min_build_tool_level: 1,
+		    	min_workbench_level: 1,
 			projectile_properties: { _damage: 28 }
 		};
 			
-				sdGun.classes[ sdGun.CLASS_SNIPERMK2 = 31 ] = 
+		sdGun.classes[ sdGun.CLASS_SNIPERMK2 = 31 ] = 
         {
             		image: sdWorld.CreateImageFromFile( 'snipermk2' ),
            		sound: 'gun_rifle',
