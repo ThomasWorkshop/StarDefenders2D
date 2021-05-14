@@ -164,7 +164,24 @@ class sdGunClass
             count: 1,
             projectile_properties: { _damage: 48, color: '#a68200' },
         };
-
+		sdGun.classes[ sdGun.CLASS_SMGMK2 = 33 ] = 
+        {
+            image: sdWorld.CreateImageFromFile( 'smg_mk2' ),
+            sound: 'gun_rifle',
+            sound_pitch: 1.6,
+            sound_volume: 1.3,
+            title: 'SMG_MK2',
+            slot: 2,
+          	 matter_cost: 60,
+		 min_build_tool_level: 1,
+            reload_time: 3,
+            muzzle_x: 8,
+            ammo_capacity: 30,
+		 spread: 0.01, // 0.02
+		 muzzle_x: 9,
+            count: 1,
+            projectile_properties: { _damage: 25 },
+        };
 
 		sdGun.classes[ sdGun.CLASS_BUILD_TOOL = 7 ] = 
 		{
