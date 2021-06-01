@@ -182,9 +182,22 @@ class sdGunClass
             count: 1,
             projectile_properties: { _damage: 25 },
         };
-
-		sdGun.classes[ sdGun.CLASS_BUILD_TOOL = 7 ] = 
+		sdGun.classes[ sdGun.CLASS_LCP = 34 ] = 
 		{
+			image: sdWorld.CreateImageFromFile( 'lcp' ),
+			sound: 'gun_railgun',
+			sound_pitch: 1.3,
+			title: 'LCP-02',
+			slot: 4,
+			reload_time: 54,
+			muzzle_x: 10,
+			ammo_capacity: -1,
+			count: 1,
+			matter_cost: 500,
+			projectile_properties: { _rail: true, explosion_radius: 11, model: 'ball', _damage: 55, color: '#03fc9d', _knock_scale:0.03 * 8 }
+	};
+		sdGun.classes[ sdGun.CLASS_BUILD_TOOL = 7 ] = 
+	{
 			image: sdWorld.CreateImageFromFile( 'buildtool' ),
 			sound: 'gun_buildtool',
 			title: 'Build tool',
